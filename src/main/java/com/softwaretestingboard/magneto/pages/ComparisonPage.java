@@ -17,8 +17,11 @@ public class ComparisonPage {
     public String getPageTitle(){
         return driver.findElement(pageTitle).getText();
     }
-    public String getProductName(int productNumber){
-        return driver.findElements(productName).get(productNumber).getText();
+    public String getFirstProductName(){
+        return driver.findElements(productName).get(1).getText();
+    }
+    public String getSecondProductName(){
+        return driver.findElements(productName).get(0).getText();
     }
 }
 

@@ -1,7 +1,6 @@
 package com.softwaretestingboard.magneto.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -23,11 +22,7 @@ public class HomePage {
         return new CreatAnAccountPage(driver);
     }
 
-    public HomePage scrollToHotSellerSection(){
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(hotSellerSection));
-        return new HomePage(driver);
-    }
+
     public HomePage hoverOnHotSellerItem(int productNumber){
         Actions act = new Actions(driver);
         act.moveToElement(driver.findElements(hotSellersProductsName).get(productNumber-1)).build().perform();
